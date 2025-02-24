@@ -1,0 +1,21 @@
+# This is a basic workflow that is manually triggered
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+   branches: [main]
+  
+  workflow_dispatch:
+  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Send greeting
+      run: echo "Hello ${{ inputs.name }}"
